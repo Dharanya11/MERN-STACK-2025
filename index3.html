@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Toggle Text Example</title>
+</head>
+
+<body>
+    <h2 id="message">Hello World</h2>
+    <input type="text" id="name"><br>
+    <button onclick="addlist()">list</button>
+    <button onclick="toggleText()">Click Me</button>
+    <button onclick="changecolor()">color change</button>
+    <ul id="list"></ul>
+    <script>
+        function toggleText() {
+            var msg = document.getElementById("message");
+            if (msg.innerHTML === "Hello World") {
+                msg.innerHTML = "Hello Kongu";
+            } else {
+                msg.innerHTML = "Hello World";
+            }
+        }
+        var changecolor = () => {
+            var data = document.getElementById("message");
+            if (data.style.color === "black") {
+                data.style.color = "red";
+            } else {
+                data.style.color = "black";
+            }
+        };
+        var addlist = () => {
+            var v = document.getElementById("name").value;
+            var l = document.createElement("list")
+            l.innerHTML = v;
+            document.getElementById("list").appendChild(l);
+        }
+    </script>
+
+</body>
+
+</html>
