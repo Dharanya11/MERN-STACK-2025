@@ -1,0 +1,57 @@
+PS D:\MERN-STACK-2025> git add .
+PS D:\MERN-STACK-2025> git commit -m "day 2"
+[detached HEAD bbac4a6] day 2
+ 20 files changed, 3330 insertions(+), 2 deletions(-)
+ create mode 100644 JAVA SCRIPT/.vscode/settings.json
+ create mode 100644 JAVA SCRIPT/script.js
+ create mode 100644 card project/.gitignore
+ create mode 100644 card project/README.md
+ create mode 100644 card project/eslint.config.js
+ create mode 100644 card project/index.html
+ create mode 100644 card project/package-lock.json
+ create mode 100644 card project/package.json
+ create mode 100644 card project/public/vite.svg
+ create mode 100644 card project/src/App.css
+ create mode 100644 card project/src/App.jsx
+ create mode 100644 card project/src/assets/react.svg
+ create mode 100644 card project/src/index.css
+ create mode 100644 card project/src/main.jsx
+ create mode 100644 card project/vite.config.js
+ create mode 100644 index2.html
+ create mode 100644 index3.html
+ create mode 100644 position.html
+ create mode 100644 responsive.html
+PS D:\MERN-STACK-2025> git branch
+* (no branch, rebasing main)
+  dharanya
+  main
+PS D:\MERN-STACK-2025> git rebase --continue
+>>
+Successfully rebased and updated refs/heads/main.
+PS D:\MERN-STACK-2025> git push origin main
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (28/28), 30.79 KiB | 3.85 MiB/s, done.
+Total 28 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Dharanya11/MERN-STACK-2025.git
+   40588fc..bbac4a6  main -> main
+PS D:\MERN-STACK-2025> git rebase --abort
+>>
+fatal: no rebase in progress
+PS D:\MERN-STACK-2025>
+
+
+
+
+
+
+
+
+
+
+
+
+
