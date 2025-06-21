@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import Context from '../hooks/Context'; 
 
 const Contact = () => {
-  return (
-    <div>Contact</div>
-  )
-}
+  const user = useContext(Context);
 
-export default Contact
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <h1>{user.ph}</h1>
+    </div>
+  );
+};
+
+export default Contact;

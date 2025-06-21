@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const Login = () => {
-
+const Signup = () => {
     const [formData, setFormData] = useState({
+        name: "",
         email: "",
         password: ""
     });
 
-    const handlechange = (e) => {
+    const handleChange = (e) => {
         setFormData((prev) => ({
             ...prev,
             [e.target.name]: e.target.value
@@ -16,8 +16,9 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Loged data: ", formData);
+        console.log("Sign Up Data:", formData);
         setFormData({
+            name: "",
             email: "",
             password: ""
         });
@@ -32,22 +33,32 @@ const Login = () => {
             backgroundColor: '#f8f8f8'
         }}>
             <div style={{
-                backgroundColor: 'violet',
+                backgroundColor: 'lightgreen',
                 border: '10px solid black',
                 padding: '30px',
                 width: '300px',
                 textAlign: 'center',
                 borderRadius: '10px'
             }}>
-                <h2>Login</h2>
+                <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Name:</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <br />
                     <div>
                         <label>Email:</label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
-                            onChange={handlechange}
+                            onChange={handleChange}
                         />
                     </div>
                     <br />
@@ -57,15 +68,15 @@ const Login = () => {
                             type="password"
                             name="password"
                             value={formData.password}
-                            onChange={handlechange}
+                            onChange={handleChange}
                         />
                     </div>
                     <br />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Sign Up" />
                 </form>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Signup;

@@ -11,6 +11,9 @@ import { Routes, Route } from 'react-router-dom'
 import State from './hooks/State'
 import Hooks from './pages/Hooks'
 import Effect from './hooks/Effect'
+import Signup from './pages/Signup'
+import Ref from './hooks/Ref'
+import Reducer from './hooks/Reducer'
 const App = () => {
   var f = ["apple", "orange", "mango"]
   var user = { username: "Dharanya", userpassword: "12355" }
@@ -31,14 +34,17 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/home' element={<Home items={f} users={user} />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/about' element={<About items={f} users={user} />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/skill' element={<Skill />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/counter' element={<Counter />} />
         <Route path='/hooks' element={<Hooks />} />
         <Route path='/state' element={<State />} />
         <Route path='/effect' element={<Effect />} />
+        <Route path='/ref' element={<Ref />} />
+        <Route path='/reducer' element={<Reducer />} />
       </Routes>
     </div>
   )
