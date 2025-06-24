@@ -14,6 +14,7 @@ import Effect from './hooks/Effect'
 import Signup from './pages/Signup'
 import Ref from './hooks/Ref'
 import Reducer from './hooks/Reducer'
+import Todo from './component/Todo'
 const App = () => {
   var f = ["apple", "orange", "mango"]
   var user = { username: "Dharanya", userpassword: "12355" }
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='/effect' element={<Effect />} />
         <Route path='/ref' element={<Ref />} />
         <Route path='/reducer' element={<Reducer />} />
+        <Route path='/todo' element={<Todo />} />
       </Routes>
     </div>
   )

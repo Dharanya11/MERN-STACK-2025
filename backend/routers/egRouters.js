@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { getRoute } = require('../controllers/egcontrollers')
-const { postRoute } = require('../controllers/egcontrollers')
-const { putRoute } = require('../controllers/egcontrollers')
-const { deleteRoute } = require('../controllers/egcontrollers')
+
+const { getRoute, putRoute, signupRoute, deleteRoute, getRouteById, loginRoute } = require('../controllers/egcontrollers.js')
 router.get('/get', getRoute)
-router.post('/post', postRoute)
+router.get('/get/:id', getRouteById)
+router.post('/signup',signupRoute)
+router.post('/login',loginRoute)
 router.put('/put/:id', putRoute)
 router.delete('/delete/:id', deleteRoute)
 

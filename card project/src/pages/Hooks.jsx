@@ -17,6 +17,7 @@ const Hooks = () => {
             <button style={{ backgroundColor: 'sandle', color: 'black', padding: '10px', border: 'none', borderRadius: '5px',marginBottom: '10px' }}>
                 <Link to='/reducer' style={{ textDecoration: 'none', color: 'black' }}>Reducer</Link>
             </button>
+            
         </div></center>
     )
 }
