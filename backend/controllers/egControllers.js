@@ -2,10 +2,14 @@ const user = require('../models/usermodel')
 const bcrypt = require('bcrypt')
 
 exports.getRoute = async (req, res) => {
-    const response = await user.find();
-    res.status(201).json({ data: response });
-    res.send('Get route working');
-}
+    try {
+        const response = await user.find();
+        res.status(200).json({ data: response });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 
 exports.getRouteById = async (req, res) => {
     try {
@@ -52,17 +56,26 @@ exports.signupRoute = async (req, res) => {
 }
 
 exports.loginRoute = async (req, res) => {
-    const { username, password } = req.body;
-    const exist = await user.findOne({ username });
-    if (!exist) {
-        return res.status(401).json({
-            message: "User not found"
-        })
+    try {
+        const { username, password } = req.body;
+        const exist = await user.findOne({ username });
+
+        if (!exist) {
+            return res.status(401).json({ message: "User not found" });
+        }
+
+        const valid = await bcrypt.compare(password, exist.password);
+
+        if (valid) {
+            return res.status(200).json({ message: "Login successful" });
+        } else {
+            return res.status(401).json({ message: "Password invalid" });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
-    const valid = await bcrypt.compare(password, exist.password)
-    if (valid) res.status(201).json({ message: "Login successfull" })
-    res.status(401).json({ message: "password Invalid" })
-}
+};
+
 exports.putRoute = async (req, res) => {
     const { username, password } = req.body;
     const update = await user.findByIdAndUpdate(req.params.id, req.body, { new: true });
