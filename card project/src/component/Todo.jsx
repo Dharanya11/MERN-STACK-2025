@@ -5,6 +5,7 @@ const Todo = () => {
     const [task, setTask] = useState('')
     const [todo, setTodo] = useState([])
     const [editing, setediting] = useState(null)
+    const api = 'http://localhost:3000/todo'
 
     const fetchTodo = async () => {
         const response = await axios.get(`http://localhost:3000/todo/get`);
@@ -18,11 +19,11 @@ const Todo = () => {
     const handleAddOREdit = async (e) => {
         e.preventDefault();
         if (editing) {
-            await axios.put(`http://localhost:3000/todo/put/${editing}`, { task })
+            await axios.put(`${api}/put/${editing}`, { task })
 
         }
         else {
-            await axios.post(`http://localhost:3000/todo/post/`, { task })
+            await axios.post(`${api}/post/`, { task })
 
         }
 
@@ -30,13 +31,13 @@ const Todo = () => {
         fetchTodo()
     }
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:3000/todo/delete/${id}`);
+        await axios.delete(`${api}/delete/${id}`);
         fetchTodo()
         console.log('Delete')
     }
 
     const handleToggleStatus = async (todo) => {
-        await axios.put(`http://localhost:3000/todo/put/${todo._id}`, {
+        await axios.put(`${api}/put/${todo._id}`, {
             status: !todo.status
         })
         fetchTodo()
